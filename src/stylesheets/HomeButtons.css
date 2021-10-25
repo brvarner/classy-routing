@@ -1,0 +1,17 @@
+.btn-home {
+    border: 1px solid;
+    color: black;
+    border-color: #1b9dcf;
+    background-color: white;
+    padding: 0.7em;
+    font-size: larger;
+    text-decoration: none;
+    border-radius: 5%;
+}
+
+.btn-home:hover{
+    color: white;
+    background-color: #1b9dcf;
+    box-shadow: 12px 15px 50px 0px rgba(113,114,117,0.55);
+
+}

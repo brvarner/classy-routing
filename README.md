@@ -1,70 +1,76 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Classy Routing
 
-## Available Scripts
+The goal of this lab is to convert, re-write, or from scratch create the same Reacting to Routing lab (using Studio Ghibli API) from the beginning of the React module. Except the design constraint is that it must be written using only Class-based Components.
 
-In the project directory, you can run:
+ 
+# Getting Started
 
-### `npm start`
+    Create a new project with Create React App.
+    Delete the src and public directory and all of its contents.
+    Create a new public directory and a new index.html file inside of public.
+    Use the ! emmet shortcut to generate a fresh html document in the index.html file. Place <div id="root"></div> in the <body> of the html document you created. (like we did in earlier videos!)
+    Create a new src directory and a components directory inside of src.
+    Create an App.jsx and a index.js file inside of src.
+    Write the basic "entry point" code for the index.js file, avoid copy/paste so you can practice writing it yourself!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+// inside of src/index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+ReactDOM.render(<App />, document.getElementById('root'));
 
-### `npm test`
+    Write a simple class component that returns some JSX for your App.jsx file.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+// inside of /src/App.jsx
+import React from 'react';
 
-### `npm run build`
+class App extends React.Component {
+    render() {
+        return (
+           " <div>
+               ` <h1>Hello from App Class Component!</h1>`
+            </div>"
+        );
+    }
+}
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+export default App;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You should now have a project structure that resembles the following:
 
-### `npm run eject`
+node_modules/
+public/
+|- index.html
+src/
+|- components/
+|- App.jsx
+|- index.js
+.gitignore
+package-lock.json
+package.json
+README.md
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ 
+#Instructions (same as before)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    Configure React Router in your application. You may use the same structure as the walkthrough video, or (if you have a better idea) you may decide on your own structure. Just make sure that it works!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    You should create three Links that look like buttons in your application. The first says "Go Home", the second says "View Films", and the last one says "View People" (or another endpoint of your choosing). Clicking these links will navigate you to the respective pages for each of these things. You can code them directly in the App.jsx or make your own <Navbar /> component instead.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    Start by only configuring ONE route. Say, for /films. After navigating to localhost:3000/films, you should see your list of films that you rendered to the browser in the previous lab. The caveat? You shouldn't need any if/else if/else logic in your render methods. The data should only be loaded and displayed when you navigate to /films. You should use this.state, componentDidMount() and fetch() to make this request.
 
-## Learn More
+    Once you have that route working, configure another one for /films/:filmid. With this route, you should be able to craft a Link for any film you have displayed on /films to navigate to /films/<id>, where you will list out all of the information pertaining to only that film.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    Now that you have /films and /films/:filmid working, repeat tasks 3 and 4 with another two endpoints (like People) in the Studio Ghibli API.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+ 
+# Hints
 
-### Code Splitting
+    The walkthrough and lecture's reference material will serve as a great guide to completing this lab.
+    Remember that a lot of your code will start with this. inside of a class.
+    Remember to bind your this keyword by using arrow functions in your event handlers.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

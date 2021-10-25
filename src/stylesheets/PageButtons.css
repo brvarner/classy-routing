@@ -1,0 +1,14 @@
+.btn-page {
+    border: 1px solid;
+    color: black;
+    border-color: #1b9dcf;
+    background-color: #1b9dcf;
+    padding: 0.5em;
+    font-size: medium;
+    text-decoration: none;
+    border-radius: 5%;
+}
+
+.btn-page:hover{
+    color: white;
+}
