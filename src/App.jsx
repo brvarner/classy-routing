@@ -8,6 +8,7 @@ import People from "./pages/People";
 import PersonDetails from "./pages/PersonDetails";
 import Locations from "./pages/Locations";
 import LocationDetails from "./pages/LocationDetails";
+import Error from "./pages/Error";
 import "./stylesheets/PageButtons.css"
 import "./stylesheets/HomeButtons.css"
 
@@ -30,6 +31,7 @@ class App extends React.Component {
                             <Route exact path="/people/:id" component={PersonDetails} />
                             <Route exact path="/locations" component={Locations} />
                             <Route exact path="/locations/:id" component={LocationDetails} />
+                            <Route path="*" component={Error} />
                         </Switch>
                 </div>
             </div>
